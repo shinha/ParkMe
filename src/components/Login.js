@@ -1,58 +1,53 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  StatusBar ,
-  TouchableOpacity
-} from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
-export default class Login extends Component{
-
+export default class Login extends Component {
 	/**signup() {
 		Actions.signup()
 	}*/
 
 	render() {
-        /**removed (from View)
+		/**removed (from View)
          *
 				<<Logo/>
 				//<Form type="Login"/>
          */
-		return(
+		return (
 			<View style={styles.container}>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
-					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+					<TouchableOpacity onPress={this.signup}>
+						<Text style={styles.signupButton}> Signup</Text>
+					</TouchableOpacity>
 				</View>
-			</View>	
-			)
+			</View>
+		);
 	}
 }
 
 const styles = StyleSheet.create({
-  container : {
-    backgroundColor:'#455a64',
-    flex: 1,
-    alignItems:'center',
-    justifyContent :'center'
-  },
-  signupTextCont : {
-  	flexGrow: 1,
-    alignItems:'flex-end',
-    justifyContent :'center',
-    paddingVertical:16,
-    flexDirection:'row'
-  },
-  signupText: {
-  	color:'rgba(255,255,255,0.6)',
-  	fontSize:16
-  },
-  signupButton: {
-  	color:'#ffffff',
-  	fontSize:16,
-  	fontWeight:'500'
-  }
+	container: {
+		backgroundColor: '#455a64',
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	signupTextCont: {
+		flexGrow: 1,
+		alignItems: 'flex-end',
+		justifyContent: 'center',
+		paddingVertical: 16,
+		flexDirection: 'row',
+	},
+	signupText: {
+		color: 'rgba(255,255,255,0.6)',
+		fontSize: 16,
+	},
+	signupButton: {
+		color: '#ffffff',
+		fontSize: 16,
+		fontWeight: '500',
+	},
 });
