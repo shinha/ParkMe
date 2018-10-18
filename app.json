@@ -1,5 +1,18 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "name": "ParkMe",
+    "icon": "./assets/icon.png",
+    "version": "1.0.0",
+    "slug": "park-me",
+    "ios": {
+      "bundleIdentifier": "com.alwaysbusy.parkme"
+    },
+    "android": {
+      "package": "com.alwaysbusy.parkme",
+      "config": {
+        "googleMaps": { "apiKey": "AIzaSyBmGLk3iucM9gwTT4MWdbJseCXo9QsqqG0" }  
+    }
+   }
   }
 }
