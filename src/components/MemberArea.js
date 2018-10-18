@@ -10,6 +10,7 @@ export default class MemberArea extends React.Component {
     render() {
         return (
             <MapView
+                style={{ flex: 1 }}
                 initialRegion={{
                     latitude: 37.78825,
                     longitude: -122.4324,
