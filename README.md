@@ -2,11 +2,11 @@
 **make sure you have npm installed**
 
 ## command line or *nix console:
-*git clone *repo*
-*cd into *repo name*
-*npm install
-*npm install -g expo-cli
-*npm start **OR** expo start
+git clone *repo*\
+cd into *repo name*\
+npm install\
+npm install -g expo-cli\
+npm start **OR** expo start\
 
 
 
