@@ -1,8 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import ParkMe from './src/ParkMe.js';
-import Login from './src/components/Login.js';
 import LoginScreen from './src/components/LoginScreen.js';
 import SignupScreen from './src/components/SignupScreen.js';
 import ForgotPasswordScreen from './src/components/ForgotPasswordScreen.js';
@@ -37,13 +34,4 @@ const AppStackNavigator = createStackNavigator({
     Signup: SignupScreen,
     Main: MemberArea,
     Forgot: ForgotPasswordScreen,
-});
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
 });
