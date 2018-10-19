@@ -11,7 +11,7 @@
     "android": {
       "package": "com.alwaysbusy.parkme",
       "config": {
-        "googleMaps": { "apiKey": "put API key here" }  
+        "googleMaps": { "apiKey": "AIzaSyC-2NZLv8QqX6eT8x6OGk71EFAFMNY1zEY" }  
     }
    }
   }
