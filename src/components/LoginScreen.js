@@ -1,6 +1,29 @@
 
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, View, TextInput, Alert } from 'react-native';
+import {
+    Container,
+    Button,
+    Text,
+    Header,
+    Left,
+    Body,
+    Right,
+    Icon,
+    Title,
+    StyleProvider,
+    Content,
+    Grid,
+    Col,
+    Row,
+    Input,
+    Item,
+    Form,
+    Label,
+    Footer,
+    FooterTab,
+    Spinner
+  } from "native-base";
 import * as firebase from 'firebase';
 
 export default class LoginScreen extends React.Component {
@@ -36,9 +59,9 @@ export default class LoginScreen extends React.Component {
 
     render() {
         return (
-            <View>
+            <Container>
 
-                <Text>Login</Text> 
+                <Text>Park.Me</Text> 
 
                 <TextInput style={{width: 200, height: 40, borderWidth: 1}}
                     value={this.state.email}
@@ -59,12 +82,24 @@ export default class LoginScreen extends React.Component {
                     autoCapitalize="none"
                     autoCorrect={false}
                 />
+                
+                <Button transparent rounded block onPress={this.onLoginPress} >
+                    <Text>Login</Text> 
+                </Button>
 
-                <Button title="Login" onPress={this.onLoginPress} />
-                <Button title="Create account..." onPress={()=>this.props.navigation.navigate('Signup')} />
-                <Button title="Forgot Password..." onPress={()=>this.props.navigation.navigate('Forgot')} />
+                <Button transparent rounded block onPress={()=>this.props.navigation.navigate('Signup')} >
+                    <Text>Create Account</Text> 
+                </Button>
 
-            </View>
+                <Button transparent rounded block onPress={()=>this.props.navigation.navigate('Forgot')} >
+                    <Text>Forgot Password</Text> 
+                </Button>
+
+                <Button transparent rounded block onPress={()=>this.props.navigation.navigate('Main')} >
+                    <Text>Continue without account</Text> 
+                </Button>
+
+            </Container>
         );
     }
 }
@@ -73,6 +108,9 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: '#a38d68'
+    },
+    loginStyles:{
+        backgroundColor: '#f788cc'
     }
 });
