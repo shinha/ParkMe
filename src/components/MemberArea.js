@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, View, Text, TextInput, Button, Alert } from 'react-native';
 import MapView from 'react-native-maps';
 import * as firebase from 'firebase';
-import { MapView } from 'expo';
 
 export default class MemberArea extends React.Component {
     constructor(props) {
