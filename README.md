@@ -1,3 +1,24 @@
+### Simple Steps to Run:
+**make sure you have npm installed**
+
+## command line or *nix console:
+git clone *repo*\
+cd into *repo name*\
+npm install\
+npm install -g expo-cli\
+npm start **OR** expo start\
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
