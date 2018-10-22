@@ -12,17 +12,9 @@ import firebase from 'firebase';
 
 export default class App extends React.Component {
     //link database connection
-    componentWillMount() {
-        var config = {
-            apiKey: 'AIzaSyAW-h6g7oCGa5Ssq8ng4P-O4Vbjpt_KzzE',
-            authDomain: 'parkmedatabase.firebaseapp.com',
-            databaseURL: 'https://parkmedatabase.firebaseio.com',
-            projectId: 'parkmedatabase',
-            storageBucket: '',
-            messagingSenderId: '501815554205',
-        };
-        firebase.initializeApp(config);
-    }
+    //componentWillMount() {
+        
+    //}
     //end dblink
 
   async componentWillMount(){ //Needed to load fonts before trying to use them
@@ -30,6 +22,17 @@ export default class App extends React.Component {
       Roboto: require('native-base/Fonts/Roboto.ttf'),
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
     });
+
+    const config = {
+      apiKey: 'AIzaSyAW-h6g7oCGa5Ssq8ng4P-O4Vbjpt_KzzE',
+      authDomain: 'parkmedatabase.firebaseapp.com',
+      databaseURL: 'https://parkmedatabase.firebaseio.com',
+      projectId: 'parkmedatabase',
+      storageBucket: '',
+      messagingSenderId: '501815554205',
+    };
+    firebase.initializeApp(config);
+
     this.setState({ loading: false });
   }
 
@@ -56,3 +59,4 @@ const AppStackNavigator = createStackNavigator({
     Main: MemberArea,
     Forgot: ForgotPasswordScreen,
 });
+

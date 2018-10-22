@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TextInput, Alert } from 'react-native';
+import { StyleSheet, View, TextInput, Alert, ImageBackground } from 'react-native';
 import {
     Container,
     Button,
@@ -16,6 +16,7 @@ import {
     Col,
     Row,
     Input,
+    Image,
     Item,
     Form,
     Label,
@@ -25,7 +26,22 @@ import {
   } from "native-base";
 import * as firebase from 'firebase';
 
+const styles = StyleSheet.create({
+   container:{
+       width:'100%',
+       height: '100%',
+       backgroundColor: '#f7f7f73d'
+   },
+   textboxStyle:{  
+       backgroundColor: '#ffffff42',
+       padding: 4,
+       marginBottom: 16
+   }
+});
+
+
 export default class LoginScreen extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -34,54 +50,94 @@ export default class LoginScreen extends React.Component {
         };
     }
 
+    static navigationOptions = {
+        header: null,
+    };
+
+    
+
     render() {
         const { email, password } = this.state;
 
         return (
-            <Container>
-
-                <Text>Park.Me</Text> 
-
-                <TextInput
-                    style={{ width: 200, height: 40, borderWidth: 1 }}
-                    value={email}
-                    onChangeText={text => {
-                        this.setState({ email: text });
-                    }}
-                    placeholder="Email"
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                />
-                <TextInput
-                    style={{ width: 200, height: 40, borderWidth: 1 }}
-                    value={password}
-                    onChangeText={text => {
-                        this.setState({ password: text });
-                    }}
-                    placeholder="Password"
-                    secureTextEntry={true}
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                />
+            <ImageBackground source = {require('../img/gradient2.png')} style={{flex:1, width:'100%', alignItems:'center', justifyContent:'center'}}>
+            <Container style={styles.container}>
                 
-                <Button transparent rounded block onPress={this.onLoginPress} >
-                    <Text>Login</Text> 
-                </Button>
 
-                <Button transparent rounded block onPress={()=>this.props.navigation.navigate('Signup')} >
-                    <Text>Create Account</Text> 
-                </Button>
+                <Text 
+                    style={{
+                        fontSize: 40, 
+                        color: '#FFF', 
+                        textAlign: 'center',
+                        marginBottom: 176,
+                        marginTop: 56
+                    }} 
+                >
+                    Park.Me
+                </Text> 
 
-                <Button transparent rounded block onPress={()=>this.props.navigation.navigate('Forgot')} >
-                    <Text>Forgot Password</Text> 
-                </Button>
+                <Content padder>
 
-                <Button transparent rounded block onPress={()=>this.props.navigation.navigate('Main')} >
-                    <Text>Continue without account</Text> 
-                </Button>
+                    <Item rounded style={styles.textboxStyle} >
+                        <Icon name='person' />
+                        <Input 
+                            placeholder = 'Username or Email' 
+                            placeholderTextColor='#FFF' 
+                            style={styles.textboxStyle} 
+                            keyboardType="email-address"
+                            autoCapitalize="none"
+                            style={{color:'#FFF'}} 
+                            autoCorrect={false}
+                            value={email}
+                            onChangeText={text => {this.setState({ email: text });}}
+                        />
+                    </Item>
+                    <Item rounded style={styles.textboxStyle} >
+                        <Icon name='lock' />
+                        <Input 
+                            secureTextEntry={true} 
+                            placeholder = 'Password' 
+                            placeholderTextColor='#FFF' 
+                            style={{color:'#FFF'}} 
+                        />
+                    </Item>
 
-            </Container>
+                    <Button 
+                        style={{padding: 4, marginBottom: 8}}
+                        bordered 
+                        rounded 
+                        block 
+                        light 
+                        onPress={this.onLoginPress} 
+                    >
+                        <Text>Login</Text> 
+                    </Button>
+                    <Grid style={{marginBottom: 8}}>
+                        <Left>
+                            <Button transparent rounded small light onPress={()=>this.props.navigation.navigate('Signup')} >
+                                <Text>Create Account</Text> 
+                            </Button>
+                        </Left>
+                        <Right>
+                            <Button transparent rounded small light onPress={()=>this.props.navigation.navigate('Forgot')} >
+                                <Text>Forgot Password</Text> 
+                            </Button>
+                        </Right>
+                    </Grid>
+
+
+                    <Button 
+                        bordered 
+                        rounded 
+                        block 
+                        light 
+                        onPress={()=>this.props.navigation.navigate('Main')} 
+                    >
+                        <Text>Continue without account</Text> 
+                    </Button>
+                </Content>
+                
+            </Container></ImageBackground>
         );
     }
 
